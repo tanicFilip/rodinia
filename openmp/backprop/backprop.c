@@ -295,8 +295,8 @@ int ndelta, nly;
     /*omp_set_num_threads(NUM_THREAD);
 #pragma omp parallel for shared(oldw, w, delta) private(                       \
     j, k, new_dw) firstprivate(ndelta, nly)*/
-    for (j = 1; j <= ndelta; j++) {
-        for (k = 0; k <= nly; k++) {
+    for (k = 0; k <= nly; k++) {
+        for (j = 1; j <= ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
             w[k][j] += new_dw;
             oldw[k][j] = new_dw;
