@@ -10,6 +10,6 @@ do
    seconds="$(echo $seconds | tr , .)"
    realSecondsElapsed="$(echo "$realSecondsElapsed + $minutes * 60.0 + $seconds" | bc -l)"
 done
-echo "Total wall clock run time: $realSecondsElapsed"
+echo "Total wall clock run time: $realSecondsElapsed" &> result
 avgRuntime="$(echo "$realSecondsElapsed / $runs" | bc -l)"
-echo "Average wall clock time of single run: $avgRuntime"
+echo "Average wall clock time of single run: $avgRuntime" &>> result
