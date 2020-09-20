@@ -1,7 +1,7 @@
 SHELL=/bin/sh -ue
 
-CFLAGS   += -O2
-CXXFLAGS += -O2
+CFLAGS   += -O0 #-floop-interchange -floop-unroll-and-jam -fpeel-loops -ftree-loop-distribution
+CXXFLAGS += -O0	#-floop-interchange -floop-unroll-and-jam -fpeel-loops -ftree-loop-distribution
 
 ifdef OUTPUT
 CPPFLAGS += -DOUTPUT
