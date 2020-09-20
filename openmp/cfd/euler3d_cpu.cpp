@@ -157,13 +157,13 @@ inline float compute_speed_of_sound(float &density, float &pressure) {
 
 
 void compute_step_factor(int nelr, float *__restrict variables, float *areas,
-                         float *__restrict step_factors) {
-#pragma omp parallel for default(shared) schedule(auto)
+                         float *__restrict step_factors) 
+{
+
     for (int blk = 0; blk < nelr / block_length; ++blk) {
         int b_start = blk * block_length;
-        int b_end =
-            (blk + 1) * block_length > nelr ? nelr : (blk + 1) * block_length;
-#pragma omp simd
+        int b_end = (blk + 1) * block_length > nelr ? nelr : (blk + 1) * block_length;
+        
         for (int i = b_start; i < b_end; i++) {
             float density = variables[i + VAR_DENSITY * nelr];
 
