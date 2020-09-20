@@ -205,10 +205,12 @@ float **kmeans_clustering(float **feature, /* in: [npoints][nfeatures] */
         }
 
         /* let the main thread perform the array reduction */
-        for (i = 0; i < nclusters; i++) {
-            for (j = 0; j < nthreads; j++) {
+        for (j = 0; j < nthreads; j++) {
+            for (i = 0; i < nclusters; i++) {
                 new_centers_len[i] += partial_new_centers_len[j][i];
                 partial_new_centers_len[j][i] = 0.0;
+            }
+            for (i = 0; i < nclusters; i++) {
                 for (k = 0; k < nfeatures; k++) {
                     new_centers[i][k] += partial_new_centers[j][i][k];
                     partial_new_centers[j][i][k] = 0.0;
