@@ -124,18 +124,56 @@ void kernel_cpu(par_str par, dim_str dim, box_str *box, FOUR_VECTOR *rv, fp *qv,
         //	Do for the # of (home+neighbor) boxes
         //------------------------------------------------------------------------------------------100
 
-        for (k = 0; k < (1 + box[l].nn); k++) {
+        pointer = l; // set first box to be processed to home box
+
+        first_j = box[pointer].offset;
+
+        //----------------------------------------50
+        //	neighbor box - distance, force, charge and type parameters
+        //----------------------------------------50
+
+        rB = &rv[first_j];
+        qB = &qv[first_j];
+
+        //----------------------------------------50
+        //	Do for the # of particles in home box
+        //----------------------------------------50
+
+        for (i = 0; i < NUMBER_PAR_PER_BOX; i = i + 1) {
+
+            // do for the # of particles in current (home or neighbor) box
+            for (j = 0; j < NUMBER_PAR_PER_BOX; j = j + 1) {
+
+                // // coefficients
+                r2 = rA[i].v + rB[j].v - DOT(rA[i], rB[j]);
+                u2 = a2 * r2;
+                vij = exp(-u2);
+                fs = 2. * vij;
+                d.x = rA[i].x - rB[j].x;
+                d.y = rA[i].y - rB[j].y;
+                d.z = rA[i].z - rB[j].z;
+                fxij = fs * d.x;
+                fyij = fs * d.y;
+                fzij = fs * d.z;
+
+                // forces
+                fA[i].v += qB[j] * vij;
+                fA[i].x += qB[j] * fxij;
+                fA[i].y += qB[j] * fyij;
+                fA[i].z += qB[j] * fzij;
+
+            } // for j
+
+        } // for i
+
+        for (k = 1; k < (1 + box[l].nn); k++) {
 
             //----------------------------------------50
             //	neighbor box - get pointer to the right box
             //----------------------------------------50
 
-            if (k == 0) {
-                pointer = l; // set first box to be processed to home box
-            } else {
-                pointer = box[l].nei[k - 1].number; // remaining boxes are
+            pointer = box[l].nei[k - 1].number; // remaining boxes are
                                                     // neighbor boxes
-            }
 
             //----------------------------------------50
             //	neighbor box - box parameters
