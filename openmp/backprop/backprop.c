@@ -295,12 +295,103 @@ int ndelta, nly;
     /*omp_set_num_threads(NUM_THREAD);
 #pragma omp parallel for shared(oldw, w, delta) private(                       \
     j, k, new_dw) firstprivate(ndelta, nly)*/
-    for (k = 0; k <= nly; k++) {
+    for (k = 0; k <= nly; k += 16) {
         for (j = 1; j <= ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
             w[k][j] += new_dw;
             oldw[k][j] = new_dw;
         }
+        k += 1;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 2;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 3;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 4;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 5;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 6;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 7;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 8;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 9;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 10;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 11;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 12;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 13;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 14;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        k += 15;
+        for (j = 1; j <= ndelta; j++) {
+            new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
+            w[k][j] += new_dw;
+            oldw[k][j] = new_dw;
+        }
+        
     }
 }
 
