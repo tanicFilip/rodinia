@@ -82,15 +82,28 @@ void run(int argc, char **argv) {
         temp = src;
         src = dst;
         dst = temp;
+
+        int n = 0;
         
-        for (int n = 0; n < cols; n++) {
+        if(n < cols - 1){
+            min = src[0];
+            min = MIN(min, src[0 + 1]);
+            dst[0] = wall[t + 1][0] + min;
+        }
+
+        for (n = 1; n < cols - 1; n++) {
             min = src[n];
-            if (n > 0)
-                min = MIN(min, src[n - 1]);
-            if (n < cols - 1)
-                min = MIN(min, src[n + 1]);
+            min = MIN(min, src[n - 1]);
+            min = MIN(min, src[n + 1]);
             dst[n] = wall[t + 1][n] + min;
         }
+
+        if(n < cols){
+            min = src[cols - 1];
+            min = MIN(min, src[cols - 1 - 1]);
+            dst[cols - 1] = wall[t + 1][cols - 1] + min;
+        }
+
     }
 
     pin_stats_pause(cycles);
