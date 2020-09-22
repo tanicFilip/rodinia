@@ -300,93 +300,63 @@ int ndelta, nly;
             new_dw = ((ETA * delta[j] * ly[k]) + (MOMENTUM * oldw[k][j]));
             w[k][j] += new_dw;
             oldw[k][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 1]) + (MOMENTUM * oldw[k + 1][j]));
             w[k + 1][j] += new_dw;
             oldw[k + 1][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 2]) + (MOMENTUM * oldw[k + 2][j]));
             w[k + 2][j] += new_dw;
             oldw[k + 2][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 3]) + (MOMENTUM * oldw[k + 3][j]));
             w[k + 3][j] += new_dw;
             oldw[k + 3][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 4]) + (MOMENTUM * oldw[k + 4][j]));
             w[k + 4][j] += new_dw;
             oldw[k + 4][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 5]) + (MOMENTUM * oldw[k + 5][j]));
             w[k + 5][j] += new_dw;
             oldw[k + 5][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 6]) + (MOMENTUM * oldw[k + 6][j]));
             w[k + 6][j] += new_dw;
             oldw[k + 6][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 7]) + (MOMENTUM * oldw[k + 7][j]));
             w[k + 7][j] += new_dw;
             oldw[k + 7][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 8]) + (MOMENTUM * oldw[k + 8][j]));
             w[k + 8][j] += new_dw;
             oldw[k + 8][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 9]) + (MOMENTUM * oldw[k + 9][j]));
             w[k + 9][j] += new_dw;
             oldw[k + 9][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 10]) + (MOMENTUM * oldw[k + 10][j]));
             w[k + 10][j] += new_dw;
             oldw[k + 10][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 11]) + (MOMENTUM * oldw[k + 11][j]));
             w[k + 11][j] += new_dw;
             oldw[k + 11][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 12]) + (MOMENTUM * oldw[k + 12][j]));
             w[k + 12][j] += new_dw;
             oldw[k + 12][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 13]) + (MOMENTUM * oldw[k + 13][j]));
             w[k + 13][j] += new_dw;
             oldw[k + 13][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 14]) + (MOMENTUM * oldw[k + 14][j]));
             w[k + 14][j] += new_dw;
             oldw[k + 14][j] = new_dw;
-        }
         
-        for (j = 1; j < ndelta; j++) {
             new_dw = ((ETA * delta[j] * ly[k + 15]) + (MOMENTUM * oldw[k + 15][j]));
             w[k + 15][j] += new_dw;
             oldw[k + 15][j] = new_dw;
