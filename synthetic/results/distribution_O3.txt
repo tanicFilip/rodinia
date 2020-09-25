@@ -1,0 +1,4 @@
+Running 3 distribution
+Run count: 50
+Non optimized total run time: 1814.35 ms
+Optimized total run time: 1756.12 ms

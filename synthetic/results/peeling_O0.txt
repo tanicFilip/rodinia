@@ -1,0 +1,4 @@
+Running 1 peeling
+Run count: 200
+Non optimized total run time: 5461.99 ms
+Optimized total run time: 5439.01 ms

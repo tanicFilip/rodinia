@@ -1,0 +1,4 @@
+Running 4 fusion
+Run count: 100
+Non optimized total run time: 478.239 ms
+Optimized total run time: 462.856 ms

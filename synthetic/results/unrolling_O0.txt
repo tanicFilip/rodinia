@@ -1,0 +1,4 @@
+Running 2 unrolling
+Run count: 200
+Non optimized total run time: 5380.45 ms
+Optimized total run time: 3041.84 ms

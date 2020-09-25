@@ -1,0 +1,4 @@
+Running 5 interchange
+Run count: 15000000
+Non optimized total run time: 5585.43 ms
+Optimized total run time: 5443.15 ms

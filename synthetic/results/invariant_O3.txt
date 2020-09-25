@@ -1,0 +1,4 @@
+Running 7 invariant
+Run count: 150
+Non optimized total run time: 1189.28 ms
+Optimized total run time: 681.668 ms
